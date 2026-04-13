@@ -301,9 +301,20 @@ Se usa en sistemas complejos donde distintos elementos comparten estructura pero
 
 ## 8. ¿Qué es un método dunder?
 
-Los métodos dunder son métodos especiales en Python que comienzan y terminan con doble guion bajo.
+Los métodos dunder (del inglés "double underscore") son métodos especiales en Python que comienzan y terminan con doble guion bajo.
 
-Ejemplo: `__init__`, `__str__`
+Algunos ejemplos son: `__init__`, `__str__`, `__len__`, `__repr__`.
+
+Estos métodos permiten modificar el comportamiento interno de los objetos y cómo interactúan con el lenguaje.
+
+### ¿Para qué sirven?
+
+Los métodos dunder se utilizan para:
+
+* Inicializar objetos (`__init__`)
+* Definir cómo se representa un objeto (`__str__`)
+* Controlar operaciones como suma, comparación o longitud
+* Integrar objetos personalizados con funciones internas de Python
 
 ### Ejemplo
 
@@ -318,11 +329,28 @@ class Persona:
 
 ### Explicación
 
-Los métodos dunder permiten que los objetos interactúen con funciones internas de Python.
+El método `__init__` inicializa el objeto al crearlo.
 
-Por ejemplo, __str__ permite definir cómo se muestra un objeto cuando se imprime, mientras que __len__ define su longitud.
+El método `__str__` define cómo se mostrará el objeto cuando se imprima en pantalla.
 
-Esto hace que los objetos se comporten de forma más natural dentro del lenguaje.
+Por ejemplo:
+
+```python
+persona = Persona("Miguelina")
+print(persona)
+```
+
+Resultado:
+
+```text
+Persona: Miguelina
+```
+
+Esto hace que los objetos sean más comprensibles y fáciles de utilizar.
+
+### Aplicación en la vida real
+
+Los métodos dunder permiten que los objetos personalizados se comporten como los tipos de datos nativos de Python, facilitando su uso en aplicaciones reales.
 
 ---
 
